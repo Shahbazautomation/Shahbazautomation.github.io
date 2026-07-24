@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Shahbaz ul Hassan — AI Automation for Financial Crime & Document Fraud</title>
+<meta name="description" content="AI automation for AML, financial-crime, and visa/immigration document workflows — built by a 7-year financial-crime investigator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#C4E6F8;
+    --sky-mid:#83C3EB;
+    --blue:#2F72A8;
+    --navy:#12395C;
+    --deep:#071A30;
+    --panel:#0B2540;
+    --ice:#EAF6FF;
+    --accent:#9FD8FF;
+    --text-dark:#122B42;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--text-dark);
+    background:var(--sky);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Sora', sans-serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--blue);
+    display:block;
+    margin-bottom:0.6rem;
+  }
+  section{padding:5.5rem 6vw;}
+  .section-title{
+    font-size:clamp(1.5rem, 3.2vw, 2.1rem);
+    font-weight:700;
+    margin-bottom:2.2rem;
+  }
+
+  /* ---------- 1. HERO ---------- */
+  .hero{
+    min-height:100vh;
+    background:
+      linear-gradient(rgba(7,26,48,0.10), rgba(7,26,48,0.30)),
+      url('portfolio-background-v2.png') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 6vw;
+    color:var(--ice);
+  }
+  .hero-inner{max-width:640px;}
+  .hero .eyebrow{color:var(--accent);}
+  .hero h1{
+    font-size:clamp(2.2rem, 5.5vw, 3.8rem);
+    font-weight:800;
+    line-height:1.1;
+    color:#FFFFFF;
+    text-shadow:0 2px 24px rgba(7,26,48,0.55);
+  }
+  .hero .tagline{
+    margin-top:1.2rem;
+    font-size:clamp(1rem, 2vw, 1.2rem);
+    color:var(--ice);
+    text-shadow:0 1px 14px rgba(7,26,48,0.6);
+    max-width:46ch;
+  }
+  .hero-cta{margin-top:2.2rem;display:flex;gap:0.9rem;flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    text-decoration:none;
+    padding:0.9rem 1.5rem;
+    border-radius:8px;
+    display:inline-block;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn.primary{background:var(--accent);color:var(--deep);font-weight:600;}
+  .btn.ghost{border:1.5px solid var(--ice);color:var(--ice);}
+  .hero-stats{
+    margin-top:3rem;
+    display:flex;
+    gap:2.5rem;
+    flex-wrap:wrap;
+  }
+  .hero-stats .num{font-family:'Sora';font-weight:700;font-size:1.5rem;color:#fff;}
+  .hero-stats .lbl{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
+
+  /* ---------- 2. ABOUT ---------- */
+  .about{background:linear-gradient(180deg, #EAF5FC 0%, #D8ECF8 100%);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:3rem;
+    align-items:start;
+    max-width:1100px;
+  }
+  .about p + p{margin-top:1rem;}
+  .about-card{
+    background:#FFFFFF;
+    border-radius:14px;
+    padding:1.8rem;
+    box-shadow:0 10px 34px rgba(18,57,92,0.12);
+    border-top:4px solid var(--blue);
+  }
+  .about-card .mono{font-size:0.78rem;color:var(--blue);}
+  .about-card h3{font-size:1rem;margin:0.9rem 0 0.3rem;}
+  .about-card p{font-size:0.9rem;color:#3D566E;}
+
+  /* ---------- 3. CORE EXPERTISE ---------- */
+  .expertise{background:var(--deep);color:var(--ice);}
+  .expertise .eyebrow{color:var(--accent);}
+  .exp-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px,1fr));
+    gap:1.1rem;
+  }
+  .exp-item{
+    background:rgba(159,216,255,0.07);
+    border:1px solid rgba(159,216,255,0.25);
+    border-radius:12px;
+    padding:1.4rem 1.3rem;
+  }
+  .exp-item .mono{color:var(--accent);font-size:0.72rem;}
+  .exp-item h3{font-size:1rem;margin:0.5rem 0 0.4rem;color:#fff;}
+  .exp-item p{font-size:0.86rem;color:rgba(234,246,255,0.75);}
+
+  /* ---------- 4. AI PROJECTS ---------- */
+  .projects{background:linear-gradient(180deg, #D8ECF8 0%, #BFE0F4 100%);}
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:1.3rem;
+  }
+  .proj-card{
+    background:#FFFFFF;
+    border-radius:14px;
+    padding:1.7rem 1.5rem;
+    box-shadow:0 8px 28px rgba(18,57,92,0.10);
+    display:flex;
+    flex-direction:column;
+    gap:0.6rem;
+    border-left:4px solid var(--blue);
+  }
+  .proj-card h3{font-size:1.02rem;}
+  .proj-card p{font-size:0.9rem;color:#3D566E;flex-grow:1;}
+  .proj-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:0.4rem;
+  }
+  .badge{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:0.25rem 0.6rem;
+    border-radius:20px;
+  }
+  .badge.dev{background:#EAF2F9;color:var(--blue);}
+  .badge.live{background:#E3F5E8;color:#2C7A44;}
+  .proj-link{font-size:0.8rem;color:var(--blue);text-decoration:none;font-weight:600;}
+  .proj-link:hover{text-decoration:underline;}
+
+  /* ---------- 5. EXPERIENCE ---------- */
+  .experience{background:var(--navy);color:var(--ice);}
+  .experience .eyebrow{color:var(--accent);}
+  .xp-list{max-width:780px;}
+  .xp-item{
+    display:grid;
+    grid-template-columns:8.5rem 1fr;
+    gap:1.6rem;
+    padding:1.5rem 0;
+    border-bottom:1px solid rgba(234,246,255,0.15);
+  }
+  .xp-item:last-child{border-bottom:none;}
+  .xp-when{font-family:'IBM Plex Mono';font-size:0.76rem;color:var(--accent);padding-top:0.25rem;}
+  .xp-item h3{font-size:1.05rem;color:#fff;margin-bottom:0.35rem;}
+  .xp-item p{font-size:0.9rem;color:rgba(234,246,255,0.78);}
+
+  /* ---------- 6. CERTIFICATIONS ---------- */
+  .certs{background:linear-gradient(180deg, #BFE0F4 0%, #D8ECF8 100%);}
+  .cert-row{display:flex;flex-wrap:wrap;gap:1rem;}
+  .cert{
+    background:#FFFFFF;
+    border-radius:10px;
+    padding:1rem 1.4rem;
+    box-shadow:0 6px 20px rgba(18,57,92,0.10);
+    display:flex;
+    align-items:center;
+    gap:0.7rem;
+    font-size:0.9rem;
+    font-weight:500;
+  }
+  .cert::before{
+    content:"✓";
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--blue);
+    color:#fff;
+    font-size:0.75rem;
+    flex-shrink:0;
+  }
+
+  /* ---------- 7. TECH STACK ---------- */
+  .stack{background:#EAF5FC;}
+  .stack-row{display:flex;flex-wrap:wrap;gap:0.8rem;}
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    background:#FFFFFF;
+    border:1.5px solid var(--sky-mid);
+    color:var(--navy);
+    border-radius:24px;
+    padding:0.55rem 1.1rem;
+  }
+
+  /* ---------- 8. CONTACT ---------- */
+  .contact{
+    background:
+      linear-gradient(rgba(7,26,48,0.72), rgba(7,26,48,0.85)),
+      url('portfolio-background-v2.png') center/cover no-repeat;
+    color:var(--ice);
+    text-align:center;
+    padding:7rem 6vw;
+  }
+  .contact .eyebrow{color:var(--accent);}
+  .contact h2{font-size:clamp(1.6rem,3.5vw,2.3rem);color:#fff;margin-bottom:0.9rem;}
+  .contact p{max-width:52ch;margin:0 auto 2.2rem;color:rgba(234,246,255,0.85);}
+  .contact .hero-cta{justify-content:center;}
+
+  footer{
+    background:var(--deep);
+    color:rgba(234,246,255,0.55);
+    font-family:'IBM Plex Mono';
+    font-size:0.72rem;
+    padding:1.6rem 6vw;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  @media (max-width:760px){
+    section{padding:4rem 6vw;}
+    .about-grid{grid-template-columns:1fr;}
+    .xp-item{grid-template-columns:1fr;gap:0.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== 1. HERO ========== -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <span class="eyebrow">Financial Crime × AI Automation</span>
+    <h1>Muhammad Shahbaz ul Hassan</h1>
+    <p class="tagline">AI automation for AML, financial-crime, and visa/immigration document workflows — built by an investigator who spent 7+ years catching what these systems are designed to catch.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#contact">Work With Me</a>
+      <a class="btn ghost" href="#projects">See the Builds</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="num">7+ yrs</div><div class="lbl">Investigation</div></div>
+      <div><div class="num">300+</div><div class="lbl">Cases Completed</div></div>
+      <div><div class="num">6</div><div class="lbl">AI Automations</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 2. ABOUT ========== -->
+<section class="about" id="about">
+  <span class="eyebrow">01 — About Me</span>
+  <h2 class="section-title">Investigator first. Builder second.<br>That order matters.</h2>
+  <div class="about-grid">
+    <div>
+      <p>I've spent 7+ years inside financial-crime investigation with Pakistan's Federal Investigation Agency — working Hundi/Hawala networks, trade-based money laundering, terrorist financing, cybercrime, and human-trafficking cases. Over 300 investigations completed.</p>
+      <p>Before AML work, I served in the Immigration Wing — screening visa and passport documents for international travellers — and in the Anti-Human Trafficking Circle, pursuing visa fraud and fake travel agencies. Document fraud on one side, financial crime on the other.</p>
+      <p>Now I build AI automations for exactly those workflows: document verification, transaction monitoring, and investigation reporting. Most automation freelancers learn the tools and guess at the domain. I lived the domain first — I know what a suspicious document looks like because I've held thousands of them.</p>
+    </div>
+    <div class="about-card">
+      <span class="mono">WHY THIS COMBINATION WORKS</span>
+      <h3>Domain + Automation</h3>
+      <p>Generic automation builders don't know what a structuring pattern or a forged endorsement page looks like. Compliance veterans usually can't build. Sitting in the overlap is the entire value.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. CORE EXPERTISE ========== -->
+<section class="expertise" id="expertise">
+  <span class="eyebrow">02 — Core Expertise</span>
+  <h2 class="section-title" style="color:#fff;">What I bring to the table</h2>
+  <div class="exp-grid">
+    <div class="exp-item">
+      <span class="mono">AML / CFT</span>
+      <h3>Hundi/Hawala &amp; TBML</h3>
+      <p>Informal value transfer networks and trade-based laundering investigation.</p>
+    </div>
+    <div class="exp-item">
+      <span class="mono">CFT</span>
+      <h3>Terrorist Financing</h3>
+      <p>Tracing and disrupting terror-finance flows through formal and informal channels.</p>
+    </div>
+    <div class="exp-item">
+      <span class="mono">DIGITAL</span>
+      <h3>Cybercrime</h3>
+      <p>Digitally-enabled financial fraud investigation and evidence handling.</p>
+    </div>
+    <div class="exp-item">
+      <span class="mono">DOCUMENTS</span>
+      <h3>Visa &amp; Travel Fraud</h3>
+      <p>Passport/visa screening, fake travel agencies, and human-trafficking casework.</p>
+    </div>
+    <div class="exp-item">
+      <span class="mono">BUILD</span>
+      <h3>AI Workflow Automation</h3>
+      <p>n8n + LLM pipelines that turn manual compliance work into automated flows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. AI PROJECTS ========== -->
+<section class="projects" id="projects">
+  <span class="eyebrow">03 — AI Projects</span>
+  <h2 class="section-title">The automation builds</h2>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <h3>TBML AI Investigation Agent</h3>
+      <p>AI-powered Trade-Based Money Laundering investigation agent — n8n + Gemini AI + Google Sheets pipeline that analyzes trade transactions and surfaces laundering indicators.</p>
+      <div class="proj-meta"><span class="badge live">Live</span><a class="proj-link" href="https://github.com/Shahbazautomation/tbml-ai-investigation-agent" target="_blank" rel="noopener">GitHub →</a></div>
+    </div>
+    <div class="proj-card">
+      <h3>AML/KYC Document Verification</h3>
+      <p>OCR + AI extraction on ID and business documents — flags missing fields and inconsistencies before a human opens the file.</p>
+      <div class="proj-meta"><span class="badge dev">In Development</span><a class="proj-link" href="https://github.com/Shahbazautomation" target="_blank" rel="noopener">GitHub →</a></div>
+    </div>
+    <div class="proj-card">
+      <h3>Visa &amp; Travel Document Fraud Detection</h3>
+      <p>Flags forged or altered travel documents and recurring patterns tied to fake or unregistered travel agencies.</p>
+      <div class="proj-meta"><span class="badge dev">In Development</span><a class="proj-link" href="https://github.com/Shahbazautomation" target="_blank" rel="noopener">GitHub →</a></div>
+    </div>
+    <div class="proj-card">
+      <h3>Investigation Report Drafting Assistant</h3>
+      <p>Turns structured case data into a first-pass investigation report — the reports I've written by hand for years, drafted in minutes.</p>
+      <div class="proj-meta"><span class="badge dev">In Development</span><a class="proj-link" href="https://github.com/Shahbazautomation" target="_blank" rel="noopener">GitHub →</a></div>
+    </div>
+    <div class="proj-card">
+      <h3>Lead Qualification &amp; CRM Routing</h3>
+      <p>AI scores inbound leads and routes them automatically — built for sales and service teams beyond compliance.</p>
+      <div class="proj-meta"><span class="badge dev">In Development</span><a class="proj-link" href="https://github.com/Shahbazautomation" target="_blank" rel="noopener">GitHub →</a></div>
+    </div>
+    <div class="proj-card">
+      <h3>Content &amp; Scheduling Automation</h3>
+      <p>Drafts and schedules social content on a rolling calendar — the same engine running my own LinkedIn presence.</p>
+      <div class="proj-meta"><span class="badge dev">In Development</span><a class="proj-link" href="https://github.com/Shahbazautomation" target="_blank" rel="noopener">GitHub →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. EXPERIENCE ========== -->
+<section class="experience" id="experience">
+  <span class="eyebrow">04 — Professional Experience</span>
+  <h2 class="section-title" style="color:#fff;">Where the pattern recognition comes from</h2>
+  <div class="xp-list">
+    <div class="xp-item">
+      <div class="xp-when">CURRENT</div>
+      <div>
+        <h3>Senior Investigation Officer — AML/CFT Composite Circle</h3>
+        <p>Financial-crime and money-laundering investigations: Hundi/Hawala, TBML, terror financing, and cybercrime. 300+ cases completed.</p>
+      </div>
+    </div>
+    <div class="xp-item">
+      <div class="xp-when">PRIOR</div>
+      <div>
+        <h3>Anti-Human Trafficking Circle</h3>
+        <p>Visa-fraud cases against travel agents; extortion by fake and unregistered travel agencies.</p>
+      </div>
+    </div>
+    <div class="xp-item">
+      <div class="xp-when">PRIOR</div>
+      <div>
+        <h3>Immigration Wing</h3>
+        <p>Visa and passport document screening for international travellers; airport passport clearance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. CERTIFICATIONS ========== -->
+<section class="certs" id="certs">
+  <span class="eyebrow">05 — Certifications</span>
+  <h2 class="section-title">Credentials</h2>
+  <div class="cert-row">
+    <div class="cert">US DOJ / ICITAP — AML Training</div>
+    <div class="cert">IBM — Artificial Intelligence</div>
+    <div class="cert">Google — Cybersecurity (2025)</div>
+    <div class="cert">BS Economics — Quaid-i-Azam University</div>
+  </div>
+</section>
+
+<!-- ========== 7. TECH STACK ========== -->
+<section class="stack" id="stack">
+  <span class="eyebrow">06 — Tech Stack</span>
+  <h2 class="section-title">Tools I build with</h2>
+  <div class="stack-row">
+    <span class="chip">n8n</span>
+    <span class="chip">LLM APIs</span>
+    <span class="chip">OCR</span>
+    <span class="chip">Google Sheets</span>
+    <span class="chip">Webhooks &amp; REST APIs</span>
+    <span class="chip">GitHub</span>
+  </div>
+</section>
+
+<!-- ========== 8. CONTACT ========== -->
+<section class="contact" id="contact">
+  <span class="eyebrow">07 — Contact</span>
+  <h2>Let's automate your compliance workflow</h2>
+  <p>For compliance teams, exchange houses, MSBs, fintechs, travel agencies, and immigration practices who need document or transaction workflows automated — reach out directly.</p>
+  <div class="hero-cta">
+    <a class="btn primary" href="mailto:your@email.com">Email Me</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/muhammad-shahbaz-ul-hassan-3a349b169" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/Shahbazautomation" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Muhammad Shahbaz ul Hassan</span>
+  <span>AML × AI Automation</span>
+</footer>
+
+</body>
+</html>
